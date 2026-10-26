@@ -11,11 +11,16 @@ public class VirtualPet {
       int energy = 5;
       
       int choice = 0;
+      String petName = " ";
       
-      System.out.println("|                                      |");
+      System.out.println("| ------------------------------------ |");
       System.out.println("|   Welcome to Virtual Pet Simulator!  |");
-      System.out.println("|  Your pet's name is Mr. Mickey Mouse |");
-      System.out.println("| ____________________________________ |");
+      System.out.println("| ------------------------------------ |");
+      
+      System.out.print("\nName your pet: ");
+      petName = input.nextLine();
+      
+      System.out.println("\n" + petName + " Is a nice pet name!");
 
       // TODO 1:
       // Create a while loop that continues while:
@@ -42,6 +47,7 @@ public class VirtualPet {
             happiness += 1;
             hunger -= 3;
             energy += 0;
+            
          } 
          else if (choice == 2) {
             happiness += 3;
@@ -58,6 +64,13 @@ public class VirtualPet {
             hunger += 1;
             energy -= 1;
          }
+         else if (choice == 5) {
+            System.out.println("\nYou choose to end the game");
+         }
+         else {
+            System.out.println("Invalid choice");
+         }
+            
          // TODO 3:
          // Create an if / else if / else statement
          // to handle the player's choice.
@@ -68,6 +81,7 @@ public class VirtualPet {
          // Print a funny message for each action.
 
       }
+      
       // TODO 4:
       // After the loop, determine WHY the game ended.
       //
