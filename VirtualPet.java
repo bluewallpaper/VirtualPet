@@ -33,7 +33,7 @@ public class VirtualPet {
          
          System.out.print("Choice: ");
          choice = input.nextInt();
-         
+         //TODO 3
          if (choice == 1) {
             happiness += 1;
             hunger -= 3;
@@ -63,10 +63,10 @@ public class VirtualPet {
             System.out.println("\nYou choose to end the game");
          }
          else {
-            System.out.println("Invalid choice");
+            System.out.println("\n[Invalid choice]");
          }
       }
-      
+      //TODO 4
       if (happiness >= 15 && hunger >= 10 && energy <= 0) {
          System.out.println(petName + " is very happy, but died with no food and energy. You Lost!");
       }
