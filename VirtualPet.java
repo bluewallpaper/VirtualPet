@@ -35,22 +35,15 @@ public class VirtualPet {
          System.out.println("   Happiness: " + happiness + "\n   Hunger: " + hunger + "\n   Energy: " + energy);
          System.out.println("-----------------");
          
-         System.out.println("\nWhat would you like to do?");
-         System.out.println("1. Feed");
-         System.out.println("2. Play");
-         System.out.println("3. Sleep");
-         System.out.println("4. Bath");
-         System.out.println("5. Quit");
+         System.out.println("\nWhat would you like to do?\n1. Feed\n2. Play\n3. Sleep\n4. Bath\n5. Quit");
          
          System.out.print("Choice: ");
          choice = input.nextInt();
          // TODO 3:
          // Create an if / else if / else statement
          // to handle the player's choice.
-         //
          // Update the three statistics according
          // to the table in the instructions.
-         //
          // Print a funny message for each action.
          if (choice == 1) {
             happiness += 1;
