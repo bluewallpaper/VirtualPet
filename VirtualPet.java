@@ -62,6 +62,16 @@ public class VirtualPet {
          else if (choice == 5) {
             System.out.println("\nYou choose to end the game");
          }
+         else if (choice == -1) {
+            System.out.println("\n| ---------------------------------------- |");
+            System.out.println("|   Welcome to NOT Virtual Pet Simulator!  |");
+            System.out.println("| ---------------------------------------- |");
+            int notchoice = 0;
+               while (notchoice != -1) {
+                  System.out.print("Choice: ");
+                  notchoice = input.nextInt();
+               }
+         }
          else {
             System.out.println("\n[Invalid choice]");
          }
