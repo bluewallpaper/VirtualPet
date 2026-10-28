@@ -12,6 +12,7 @@ public class VirtualPet {
       
       int choice = 0;
       String petName = " ";
+      String myName = " ";
       
       System.out.println("| ------------------------------------ |");
       System.out.println("|   Welcome to Virtual Pet Simulator!  |");
@@ -29,7 +30,7 @@ public class VirtualPet {
                             "\n   Energy: " + energy);
          System.out.println("-----------------");
          
-         System.out.println("\nWhat would you like to do?\n1. Feed\n2. Play\n3. Sleep\n4. Bath\n5. Quit");
+         System.out.println("\nWhat would you like to do?\n[1] Feed\n[2] Play\n[3] Sleep\n[4] Bath\n[5] Quit");
          
          System.out.print("Choice: ");
          choice = input.nextInt();
@@ -63,14 +64,24 @@ public class VirtualPet {
             System.out.println("\nYou choose to end the game");
          }
          else if (choice == -1) {
-            System.out.println("\n| ---------------------------------------- |");
-            System.out.println("|   Welcome to NOT Virtual Pet Simulator!  |");
-            System.out.println("| ---------------------------------------- |");
+            System.out.println("\n  --+------------,----------------^------- |");
+            System.out.println("|   Welc0m3 to NOT Virtu4l Pet S1mul4tor?  ");
+            System.out.println("| ---------*-----------------.---------'-- |");
             int notchoice = 0;
-               while (notchoice != -1) {
-                  System.out.print("Choice: ");
-                  notchoice = input.nextInt();
+            while (notchoice != -1) {
+               System.out.println("\nWhat would you not like to do?\n[-5] Do you remember me?\n[-4] Do you remember what I want?\n[-3] What if I want to sleep?\n[-2] Insert text\n[-1] Do not quit");
+               System.out.print("Don't choose: ");
+               notchoice = input.nextInt();
+               if (notchoice == -5) {
+                  System.out.print("Do you remember my name? ");
+                  myName = input.nextLine();
+                  if (myName.equals(petName)) {
+                     System.out.print("You remembered it!");
+                     happiness ++;
+                  // Fix the code and continue
+                  }
                }
+            }
          }
          else {
             System.out.println("\n[Invalid choice]");
