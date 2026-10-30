@@ -22,7 +22,7 @@ public class VirtualPet {
       petName = input.nextLine();
 
       //TODO 1
-      while (happiness < 15 && hunger < 10 && energy > 0 && choice != 5) {
+      while (happiness < 15 && hunger < 10 && energy > 0 && choice != 5 && happiness > 0) {
          //TODO 2
          System.out.println("\n-----------------");
          System.out.println("   Happiness: " + happiness + 
@@ -68,18 +68,33 @@ public class VirtualPet {
             System.out.println("|   Welc0m3 to NOT Virtu4l Pet S1mul4tor?  ");
             System.out.println("| ---------*-----------------.---------'-- |");
             int notchoice = 0;
-            while (notchoice != -1) {
+            Scanner notinput = new Scanner(System.in);
+            
+            while (notchoice != -1 && happiness > 0) {
+               System.out.println("\n<-------*-------;");
+               System.out.println("   Sadness? " + Math.pow(happiness, -1) + 
+                            "\n   Satiated? " + Math.pow(hunger, -1) + 
+                            "\n   Tired? " + Math.pow(energy, -1));
+               System.out.println("---~---i----*--'-");
                System.out.println("\nWhat would you not like to do?\n[-5] Do you remember me?\n[-4] Do you remember what I want?\n[-3] What if I want to sleep?\n[-2] Insert text\n[-1] Do not quit");
                System.out.print("Don't choose: ");
                notchoice = input.nextInt();
                if (notchoice == -5) {
-                  System.out.print("Do you remember my name? ");
-                  myName = input.nextLine();
+                  System.out.print("\nDo you remember my name? ");
+                  myName = notinput.nextLine();
                   if (myName.equals(petName)) {
-                     System.out.print("You remembered it!");
+                     System.out.println("\nYou remembered it!");
                      happiness ++;
-                  // Fix the code and continue
+                  } else {
+                     happiness = -5;
                   }
+               }
+               else if (notchoice == -4) {
+                  System.out.println("\n-----------------");
+                  System.out.println("   Happiness: " + happiness + 
+                            "\n   Hunger: " + hunger + 
+                            "\n   Energy: " + energy);
+                  System.out.println("-----------------");
                }
             }
          }
@@ -100,7 +115,9 @@ public class VirtualPet {
       else if (energy <= 0) {
          System.out.println(petName + " got very tired. You Lost!");
       }
-
+      else if (happiness <= 0) {
+         System.out.println(petName + " died of sadness.");
+      }
       input.close();
    }
 }
